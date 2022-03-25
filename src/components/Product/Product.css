@@ -1,7 +1,8 @@
 .product{
     width: 300px;
     height: 450px;
-    border: 1px solid #95A0A7;
+    /* border: 1px solid #95A0A7; */
+    border: 1px solid #20170a;
     background-color: rgb(248, 218, 163);
     border-radius: 8px;
 }
@@ -21,3 +22,22 @@
     font-size: 25px;
     line-height: 25px;
 } 
+
+.btn{
+    background-color: rgb(248, 218, 163);;
+    color: #20170a;
+    padding: 8px;
+    border-radius: 6px;
+    border: 2px solid #20170a;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn:hover{
+    background-color: #20170a;
+    color: wheat;
+}
+
+.icon{
+
+}
