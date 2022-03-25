@@ -10,10 +10,24 @@
 .header img{
     height: 40px;
 }
+.header h1{
+    color: orange;
+    font-family: "Metamorphous", cursive;
+    font-size: 30px;
+}
 .header a{
-    color: #ffff;
+    color: orange;
     text-decoration: none;
     font-size: 17px;
     margin-left: 36px;
+}
+.header a:hover{
+    color: white;
+}
+
+@media screen and (max-width:1100px){
+    .header{
+        width: fit-content;
+    }
 }
 
