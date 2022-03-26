@@ -6,6 +6,7 @@ import './Shop.css'
 const Shop = () => {
     const [products,setProduct] = useState([])
     const [cart,setCart] = useState([])
+
     useEffect(() =>{
         fetch('data.json')
         .then(res => res.json())
@@ -16,6 +17,12 @@ const Shop = () => {
         const newCart = [...cart,product];
         setCart(newCart)
     }
+
+    //removing data triggering 'remove items' button
+    const handleCart2 = () =>{
+        setCart([])
+    }
+
     return (
         <div className='shop-container'>
             <div className='products-container'>
@@ -24,7 +31,7 @@ const Shop = () => {
                 }
             </div>
             <div className='cart-container'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleCart2={handleCart2}></Cart>
 
             </div>
             

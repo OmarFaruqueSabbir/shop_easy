@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Cart.css'
 
-const Cart = ({cart}) => {
+const Cart = ({cart,handleCart2}) => {
     let selectItem = []
     for (const product of cart){
         selectItem.push(product)
     }
+
 
     // getting random number
     const [item,setItem] = useState([selectItem])
@@ -15,20 +16,23 @@ const Cart = ({cart}) => {
         setItem(randomItem);
     }
     const {name} = item;
+
     return (
         <div className='cart'>
             <h4>Order Summary: </h4>
             <p>Selected items: 
-                <ol>
                     {selectItem.map((product) => ( 
-                        <li> {product.name}</li>
+                        <div class="card-body d-flex">
+                        <img src={product.img} class="card-img-top" className="box"   alt="..."></img>
+                        <h5 class="card-title"> {product.name}</h5>
+                    </div>
                     ))}
-                </ol>
             </p>
 
             <button className='btn' onClick={()=> handleCart(selectItem)}>choose one</button>
             <h5>Randomly Selected: </h5>
             <p> {name? name : 'select your meal'}</p>
+            <button className='btn' onClick={handleCart2}>remove items</button>
         </div>
     );
 };
