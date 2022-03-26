@@ -2,7 +2,7 @@ import React from 'react';
 import './Product.css'
 import { MdShoppingCart } from 'react-icons/md'
 
-const Product = ({product}) => {
+const Product = ({product,handleCart}) => {
     const {img,name,price} = product;
     return (
         <div className='product'>
@@ -10,7 +10,7 @@ const Product = ({product}) => {
             <div className='product-detail'>
                 <h1 className='product-name'>{name}</h1>
                 <p> Price: {price} tk.</p>
-                <button className='btn'>Add to Cart  <MdShoppingCart className='icon' /></button>
+                <button onClick={()=> handleCart(product)} className='btn'>Add to Cart  <MdShoppingCart className='icon' /></button>
             </div>
 
             
