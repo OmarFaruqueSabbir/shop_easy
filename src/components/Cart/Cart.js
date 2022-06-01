@@ -15,7 +15,7 @@ const Cart = ({cart,handleCart2}) => {
         const randomItem = selectItem[Math.floor(Math.random()*selectItem.length)];
         setItem(randomItem);
     }
-    const {name} = item;
+    const {name,img} = item;
 
     return (
         <div className='cart'>
@@ -31,7 +31,11 @@ const Cart = ({cart,handleCart2}) => {
 
             <button className='btn' onClick={()=> handleCart(selectItem)}>choose one</button>
             <h5>Randomly Selected: </h5>
-            <p> {name? name : 'select your meal'}</p>
+            <div className='card-body'>
+                <img className="box1" src={img} alt="" />
+            <p> {name? name : 'select your item'}</p>
+            </div>
+
             <button className='btn' onClick={handleCart2}>remove items</button>
         </div>
     );
